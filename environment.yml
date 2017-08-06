@@ -1,0 +1,86 @@
+name: pbi
+channels:
+- conda-forge
+- defaults
+dependencies:
+- backports_abc=0.5=py27_0
+- certifi=2017.7.27.1=py27_0
+- freetype=2.7=1
+- functools32=3.2.3.2=py27_1
+- libpng=1.6.28=1
+- matplotlib=2.0.2=py27_1
+- singledispatch=3.4.0.3=py27_0
+- ssl_match_hostname=3.5.0.1=py27_1
+- subprocess32=3.2.7=py27_0
+- tornado=4.5.1=py27_0
+- appnope=0.1.0=py27_0
+- backports=1.0=py27_0
+- bzip2=1.0.6=3
+- cmake=3.6.3=0
+- curl=7.54.1=0
+- cycler=0.10.0=py27_0
+- cython=0.26=py27_0
+- decorator=4.1.2=py27_0
+- enum34=1.1.6=py27_0
+- expat=2.1.0=0
+- get_terminal_size=1.0.0=py27_0
+- ipython=5.3.0=py27_0
+- ipython_genutils=0.2.0=py27_0
+- krb5=1.13.2=0
+- libssh2=1.8.0=0
+- mkl=2017.0.3=0
+- ncurses=5.9=10
+- nose=1.3.7=py27_1
+- numpy=1.11.3=py27_0
+- openssl=1.0.2l=0
+- path.py=10.3.1=py27_0
+- pathlib2=2.3.0=py27_0
+- pexpect=4.2.1=py27_0
+- pickleshare=0.7.4=py27_0
+- pip=9.0.1=py27_1
+- prompt_toolkit=1.0.14=py27_0
+- ptyprocess=0.5.2=py27_0
+- py=1.4.34=py27_0
+- pyface=5.1.0=py27_0
+- pygments=2.2.0=py27_0
+- pyparsing=2.2.0=py27_0
+- pyqt=4.11.4=py27_4
+- pytest=3.1.3=py27_0
+- python=2.7.13=0
+- python-dateutil=2.6.1=py27_0
+- pytz=2017.2=py27_0
+- qt=4.8.7=4
+- readline=6.2=2
+- scandir=1.5=py27_0
+- scipy=0.19.0=np111py27_0
+- setuptools=27.2.0=py27_0
+- simplegeneric=0.8.1=py27_1
+- sip=4.18=py27_0
+- six=1.10.0=py27_0
+- sqlite=3.13.0=0
+- tk=8.5.18=0
+- traitlets=4.3.2=py27_0
+- traits=4.6.0=py27_0
+- traitsui=5.1.0=py27_0
+- wcwidth=0.1.7=py27_0
+- wheel=0.29.0=py27_0
+- xz=5.2.2=1
+- yaml=0.1.6=0
+- zlib=1.2.8=3
+- pip:
+  - backports-abc==0.5
+  - backports.shutil-get-terminal-size==1.0.0
+  - backports.ssl-match-hostname==3.5.0.1
+  - ipython-genutils==0.2.0
+  - networkx==1.11
+  - olefile==0.44
+  - optv==0.0.0
+  - pbi==0.1
+  - pillow==4.2.1
+  - prompt-toolkit==1.0.14
+  - pywavelets==0.5.2
+  - pyyaml==3.12
+  - scikit-image==0.13.0
+  - smop==0.0.0
+prefix: /Users/alex/anaconda3/envs/pbi
+
