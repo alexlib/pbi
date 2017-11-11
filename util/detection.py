@@ -75,3 +75,45 @@ def detect_blobs(image, approx_size=15, thresh=0.1):
     """
     blobs = blob_dog(image.T, max_sigma=5, threshold=thresh)
     return targetize(blobs, approx_size)
+
+def read_blob(fname, frame_num, approx_size=15):
+    """
+    Reads blob.dat file with the targets created by BlobRecorder software
+    of a real-time image processing system
+    
+    Arguments:
+        fname - the name of the .dat file to read
+        frame_num - the number of the frame to read
+        approx_size - just a placeholder and there's a default so don't worry
+        about  it.
+    """
+
+
+    header_dt = np.dtype([('framecount','i'),('tstart','7i'),('tend','7i')])
+    blob_head_dt = np.dtype([('stamp','i'),('frame_n','i'),('blob_count','i')])
+    blob_dt = np.dtype([('x0','<h'),('x1','<h'),('y0','<h'),('y1','<h'),('higher_bits',np.int64)])
+    
+    with open('blob0_2017.07.05_09.40.43_part0.dat','rb') as f:
+    # with open('b1.dat','rb') as f:
+    
+        header = np.fromfile(f,dtype=header_dt,count=1)
+        print('header', header)
+        framecount = header[0][0]
+        print('framecount',framecount)
+        
+        for frame in range(2): #framecount):
+            blob_header = np.fromfile(f,dtype=blob_head_dt,count=1)
+            # print('blob header', blob_header)
+            blob_count = blob_header[0][-1]
+            
+            if blob_count:
+                print('blob header', blob_header)
+                blobs = np.fromfile(f,dtype=blob_dt,count=blob_count)
+                # print('x0,y0,->x1,y1',blob['x0'],blob['y0'],blob['x1'],blob['y1'])
+            
+                for blob in blobs:
+                    A = np.bitwise_and(np.array(2**20-1).astype(np.int64),blob['higher_bits'])         # Area
+                    X = (np.bitwise_and(np.array(0x00000fffff000000).astype(np.int64),blob['higher_bits']) >> 24 ) / 256.0
+                    Y = (np.bitwise_and(np.array(0xfffff00000000000).astype(np.int64),blob['higher_bits']) >> 44 ) / 256.0
+                    print('A=%3.1f,xc=%3.1f,yc=%3.1f'%(A,X,Y))
+        
