@@ -51,18 +51,23 @@ class FrameProc(PoolWorker):
         detections = []
         corrected = []
         for cix, cam_spec in enumerate(self._cams):
-            img = pl.imread(self._seq['template'].format(
-                cam=cix + 1, frame=frame))
-            if args.method == 'large':
-                targs = detect_large_particles(
-                    img, approx_size=self._seq['radius'],
-                    peak_thresh=cam_spec['peak_threshold'])
-            elif args.method == 'dog':
-                targs = detect_blobs(img, thresh=self._seq['threshold'])
-            else:
-                hp = simple_highpass(img, self._cpar)
-                targs = target_recognition(
-                    hp, self._tpar, cix, self._cpar)
+            if args.method == 'blob':
+                pass# read blob file
+            else: # read image
+                img = pl.imread(self._seq['template'].format(
+                    cam=cix + 1, frame=frame))
+            
+                if args.method == 'large':
+                    targs = detect_large_particles(
+                        img, approx_size=self._seq['radius'],
+                        peak_thresh=cam_spec['peak_threshold'])
+                elif args.method == 'dog':
+                    targs = detect_blobs(img, thresh=self._seq['threshold'])
+                else: # args.method == 'default':
+                    hp = simple_highpass(img, self._cpar)
+                    targs = target_recognition(
+                        hp, self._tpar, cix, self._cpar)
+
             
             targs.sort_y()
             detections.append(targs)
@@ -117,7 +122,7 @@ if __name__ == "__main__":
         help="A YAML file with calibration and image properties.")
     parser.add_argument(
         '--method', '-m', default='default', 
-        choices=['default', 'large', 'dog'],
+        choices=['default', 'large', 'dog', 'blob'],
         help="Change detection method to one suitable for large particles.")
     parser.add_argument(
         '--procs', '-p', default=4, type=int,
