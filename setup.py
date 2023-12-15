@@ -58,18 +58,15 @@ setup(
     # this:
     #   py_modules=["my_module"],
 
-    install_requires = ['numpy', 
+    install_requires = [
+        'numpy',
         'scipy', 
         'matplotlib',
-        'optv',
-        'traitsui',
-        'traits',
-        'pyface',
-        'mayavi',
+        'openptv_python',
         'imageio',
-        'vtk',
         'PyQt5',
-        'scikit-image'],
+        'scikit-image'
+        ],
 
     # Will list examples once I add them in.
     #package_data={

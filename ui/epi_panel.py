@@ -9,9 +9,9 @@ Derives from the CamPanel used for calibration.
 import numpy as np
 from PyQt5 import QtCore, QtGui, QtWidgets
 from cam_panel import CameraPanel
-from optv.calibration import Calibration
-from optv.parameters import VolumeParams, ControlParams
-from optv.epipolar import epipolar_curve
+from opentpv_python.calibration import Calibration
+from opentpv_python.parameters import VolumeParams, ControlParams
+from opentpv_python.epipolar import epipolar_curve
 
 class CamPanelEpi(CameraPanel):
     point_marked = QtCore.pyqtSignal(np.ndarray, Calibration, int,

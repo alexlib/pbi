@@ -7,7 +7,7 @@ Created on Wed Jan  6 15:46:13 2016
 @author: yosef
 """
 
-from optv.tracking_framebuf import TargetArray, CORRES_NONE
+from openptv_python.tracking_frame_buf import TargetArray, CORRES_NONE
 
 import numpy as np
 from skimage.feature import match_template, peak_local_max, blob_dog

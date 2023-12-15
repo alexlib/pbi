@@ -17,8 +17,8 @@ from PyQt5 import QtCore, QtGui
 from .trajectories_base import Ui_TrajectoriesSelector
 from .cam_panel import CameraPanel
 
-from optv.imgcoord import image_coordinates
-from optv.transforms import convert_arr_metric_to_pixel
+from opentpv_python.imgcoord import image_coordinates
+from opentpv_python.transforms import convert_arr_metric_to_pixel
 from flowtracks.scene import Scene
 from flowtracks.io import save_particles_table
 

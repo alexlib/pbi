@@ -13,10 +13,10 @@ import numpy as np
 
 from cam_panel import CameraPanel
 
-from optv.orientation import external_calibration, full_calibration
-from optv.imgcoord import image_coordinates
-from optv.transforms import convert_arr_metric_to_pixel
-from optv.orientation import match_detection_to_ref
+from openptv_python.orientation import external_calibration, full_calibration
+from openptv_python.imgcoord import image_coordinates
+from openptv_python.trafo import metric_to_pixel
+from openptv_python.orientation import match_detection_to_ref
 
 class CalibPanel(CameraPanel):
     def __init__(self, parent=None):

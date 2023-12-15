@@ -14,11 +14,11 @@ Created on Sun Jan 31 13:42:18 2016
 if __name__ == "__main__":
     import argparse, yaml, numpy as np
     
-    from optv.orientation import full_calibration
-    from optv.parameters import ControlParams
+    from opentpv_python.orientation import full_calibration
+    from opentpv_python.parameters import ControlParams
     
-    from optv.tracking_framebuf import TargetArray, Frame
-    from optv.calibration import Calibration
+    from opentpv_python.tracking_framebuf import TargetArray, Frame
+    from opentpv_python.calibration import Calibration
     
     parser = argparse.ArgumentParser()
     parser.add_argument('config', help="Path to configuration YAML file.")

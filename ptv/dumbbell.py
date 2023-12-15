@@ -23,7 +23,7 @@ import os
 import matplotlib.pyplot as pl, matplotlib.cm as cm
 from matplotlib.widgets import  RectangleSelector
 
-from optv.tracking_framebuf import TargetArray, read_targets
+from opentpv_python.tracking_framebuf import TargetArray, read_targets
 
 def onselect(eclick, erelease, im, rects, tiles):
     xs = np.sort(np.r_[eclick.xdata, erelease.xdata])

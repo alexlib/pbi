@@ -13,8 +13,8 @@ Created on Tue Dec 15 13:39:40 2015
 # proper bindings.
 
 import os
-from optv.orientation import dumbbell_target_func
-from optv.parameters import ControlParams
+from opentpv_python.orientation import dumbbell_target_func
+from opentpv_python.parameters import ControlParams
 
 def calib_convergence(calib_vec, targets, calibs, active_cams, cpar,
     db_length, db_weight):
@@ -56,9 +56,9 @@ def calib_convergence(calib_vec, targets, calibs, active_cams, cpar,
     return dumbbell_target_func(targets, cpar, calibs, db_length, db_weight)
 
 if __name__ == "__main__":
-    from optv.calibration import Calibration
-    from optv.tracking_framebuf import read_targets
-    from optv.transforms import convert_arr_pixel_to_metric
+    from opentpv_python.calibration import Calibration
+    from opentpv_python.tracking_framebuf import read_targets
+    from opentpv_python.transforms import convert_arr_pixel_to_metric
     
     import yaml, numpy as np
     from scipy.optimize import minimize

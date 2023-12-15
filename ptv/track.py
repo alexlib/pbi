@@ -10,10 +10,10 @@ Created on Mon Apr 24 14:21:46 2017
 
 if __name__ == "__main__":
     import yaml
-    from optv.calibration import Calibration
-    from optv.parameters import ControlParams, VolumeParams, TrackingParams,\
+    from opentpv_python.calibration import Calibration
+    from opentpv_python.parameters import ControlParams, VolumeParams, TrackingParams,\
         SequenceParams
-    from optv.tracker import Tracker
+    from opentpv_python.tracker import Tracker
     
     import argparse
     parser = argparse.ArgumentParser()

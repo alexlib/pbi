@@ -12,7 +12,7 @@ references:
 
 import numpy as np
 import numpy.random as rnd
-from optv.calibration import Calibration
+from opentpv_python.calibration import Calibration
 
 def get_pos(inters, R, angs):
     # Transpose of http://planning.cs.uiuc.edu/node102.html

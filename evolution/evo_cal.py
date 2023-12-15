@@ -13,9 +13,9 @@ import numpy.random as rnd
 from matplotlib import cm
 
 import inspect
-from optv.imgcoord import image_coordinates
-from optv.transforms import convert_arr_metric_to_pixel
-from optv.segmentation import target_recognition
+from opentpv_python.imgcoord import image_coordinates
+from opentpv_python.transforms import convert_arr_metric_to_pixel
+from opentpv_python.segmentation import target_recognition
 from util.evolution import gen_calib, get_pos, mutation, recombination, choose_breeders
 
 wrap_it_up = False
@@ -106,7 +106,7 @@ def show_current(signum, frame):
 
 # Main part
 import sys, yaml
-from optv.parameters import ControlParams, TargetParams
+from opentpv_python.parameters import ControlParams, TargetParams
 from util.openptv import simple_highpass
 
 yaml_file = sys.argv[1]

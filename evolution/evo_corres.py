@@ -105,8 +105,8 @@ if __name__ == "__main__":
     import argparse, yaml, time
     import numpy.random as rnd
     
-    from optv.parameters import VolumeParams, ControlParams, TargetParams
-    from optv.segmentation import target_recognition
+    from opentpv_python.parameters import VolumeParams, ControlParams, TargetParams
+    from opentpv_python.segmentation import target_recognition
     from util.openptv import simple_highpass
     
     from multiprocessing import Pipe, Queue, cpu_count

@@ -13,9 +13,9 @@ if __name__ == "__main__":
     import sys, argparse, yaml, numpy as np
     from calib import full_calibration
     
-    from optv.tracking_framebuf import TargetArray
-    from optv.calibration import Calibration
-    from optv.parameters import ControlParams
+    from opentpv_python.tracking_framebuf import TargetArray
+    from opentpv_python.calibration import Calibration
+    from opentpv_python.parameters import ControlParams
     
     
     parser = argparse.ArgumentParser()

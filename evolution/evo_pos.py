@@ -12,8 +12,8 @@ Created on Tue May 10 09:41:11 2016
 
 import sys, numpy as np
 from util.evolution import gen_calib, get_pos
-from optv.transforms import convert_arr_pixel_to_metric, correct_arr_brown_affine
-from optv.orientation import point_positions
+from opentpv_python.transforms import convert_arr_pixel_to_metric, correct_arr_brown_affine
+from opentpv_python.orientation import point_positions
 from calib import correspondences
 
 def fitness(solution, detections, glass_vecs, known_points, vpar, cpar, 
@@ -195,8 +195,8 @@ if __name__ == "__main__":
     import argparse, yaml, matplotlib.pyplot as pl
     import numpy.random as rnd
     
-    from optv.parameters import VolumeParams, ControlParams, TargetParams
-    from optv.segmentation import target_recognition
+    from opentpv_python.parameters import VolumeParams, ControlParams, TargetParams
+    from opentpv_python.segmentation import target_recognition
     from util.evolution import cauchy_mutation, recombination, choose_breeders
     from util.openptv import simple_highpass
 

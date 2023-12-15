@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Code for interacting with liboptv that is pure Python and requires no 
-compilation. Counterpart of calib.pyx in that it could be in liboptv but for
+Code for interacting with libopenptv_python that is pure Python and requires no 
+compilation. Counterpart of calib.pyx in that it could be in libopenptv_python but for
 the bureaucratic burden.
 
 Created on Sun Jan 31 14:06:13 2016
@@ -12,14 +12,14 @@ import yaml
 import numpy as np
 from imageio import imread
 
-from optv.parameters import ControlParams, TargetParams
-from optv.calibration import Calibration
-from optv.image_processing import preprocess_image
-from optv.segmentation import target_recognition
-from optv.tracking_framebuf import CORRES_NONE
+from openptv_python.parameters import ControlPar, TargetPar
+from openptv_python.calibration import Calibration
+from openptv_python.image_processing import prepare_image
+from openptv_python.segmentation import target_recognition
+from openptv_python.constants import CORRES_NONE
 
 def simple_highpass(img, cpar):
-    return preprocess_image(img, 0, cpar, 12)
+    return prepare_image(img, 1, 0)
     
 def intersect_known_points(point_list):
     """
@@ -62,7 +62,7 @@ def read_scene_config(fname):
     
     Returns:
     yaml_args - the raw dict read from file. Added keys: 'targ_par' for the
-        target detection parameters (TargetParams object).
+        target detection parameters (TargetPar object).
     cam_args - a list of per-camera dicts, as found in the raw YAML with keys 
         added for per-camera derived data structures. Added keys
         are 'image' for the array with image data; 'hp' for the image 
@@ -77,8 +77,8 @@ def read_scene_config(fname):
     cam_args = yaml_args['cameras']
     
     yaml_args['scene']['cams'] = len(cam_args)
-    cpar = ControlParams(**yaml_args['scene'])
-    targ_par = TargetParams(**yaml_args['detection'])
+    cpar = ControlPar(**yaml_args['scene'])
+    targ_par = TargetPar(**yaml_args['detection'])
     yaml_args['targ_par'] = targ_par
     
     # Load them from spec and results of curve generator.

@@ -10,8 +10,8 @@ import numpy as np
 from PyQt5 import QtGui, QtWidgets  
 from cam_calib_base import Ui_CameraCalibration
 
-from optv.calibration import Calibration
-from optv.parameters import ControlParams, TargetParams
+from openptv_python.calibration import Calibration
+from openptv_python.parameters import ControlPar, TargetPar
 
 class SingleCameraCalibration(QtWidgets.QWidget, Ui_CameraCalibration):
     def __init__(self, control_args, cam, ori, addpar, man_file, known_points,
@@ -22,12 +22,11 @@ class SingleCameraCalibration(QtWidgets.QWidget, Ui_CameraCalibration):
         self._man = man_file
 
         # Generate OpenPTV configuration objects:
-        cal = Calibration()
-        cal.from_file(ori.encode(), addpar.encode())
+        cal = Calibration().from_file(ori, addpar)
         
         control_args.setdefault('cams', 1)
-        control = ControlParams(**control_args)
-        targ_par = TargetParams(**detection_args)
+        control = ControlPar(**control_args)
+        targ_par = TargetPar(**detection_args)
         
         # Subordinate widgets setup:
         self.cam.reset(control, cam, manual_detection_numbers, cal, 
@@ -123,12 +122,26 @@ if __name__ == "__main__":
     import sys
     import yaml
     
-    import argparse
-    parser = argparse.ArgumentParser()
-    parser.add_argument('calib_par_file', type=str, 
-        help="Path to calibration parameters of this camera (yaml)")
-    args = parser.parse_args()
+    # import argparse
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument('calib_par_file', type=str, 
+    #     help="Path to calibration parameters of this camera (yaml)")
+    # args = parser.parse_args()
     
+    
+    from dataclasses import dataclass
+
+    @dataclass
+    class Args:
+        calib_par_file: str
+   
+    my_dict = {'calib_par_file': './example/config/cal/cam1.yaml'}
+    args = Args(**my_dict)
+    
+    import os
+
+    print(os.path.abspath(os.curdir))
+        
     yaml_args = yaml.load(open(args.calib_par_file,'r'), yaml.CLoader)
     cal_args = yaml_args['target']
     scene_args = yaml_args['scene']

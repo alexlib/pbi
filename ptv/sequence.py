@@ -9,9 +9,9 @@ Created on Wed Jun  1 10:35:25 2016
 import numpy as np, matplotlib.pyplot as pl
 from util.parallel_runner import PoolWorker
 
-from optv.correspondences import correspondences, MatchedCoords
-from optv.segmentation import target_recognition
-from optv.orientation import point_positions
+from opentpv_python.correspondences import correspondences, MatchedCoords
+from opentpv_python.segmentation import target_recognition
+from opentpv_python.orientation import point_positions
 
 from util.openptv import simple_highpass
 from util.detection import detect_large_particles, detect_blobs
@@ -110,7 +110,7 @@ if __name__ == "__main__":
     from queue import Empty
     
     from util.openptv import read_scene_config
-    from optv.parameters import VolumeParams
+    from opentpv_python.parameters import VolumeParams
     
     parser = argparse.ArgumentParser()
     parser.add_argument('config', 

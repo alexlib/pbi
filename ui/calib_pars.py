@@ -12,7 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from calib_pars_base import Ui_calibPars
 
 import numpy as np
-from optv.calibration import Calibration
+from openptv_python.calibration import Calibration
 
 class CalibParameters(QtWidgets.QWidget, Ui_calibPars):
     pos_changed = QtCore.pyqtSignal(np.ndarray, name="positionChanged")

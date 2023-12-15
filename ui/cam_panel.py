@@ -6,10 +6,11 @@ Created on Sun Jul 19 14:07:11 2015
 """
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import numpy as np, matplotlib.pyplot as pl
+import numpy as np
+import matplotlib.pyplot as pl
 
-from optv.calibration import Calibration
-from optv.segmentation import target_recognition
+from openptv_python.calibration import Calibration
+from openptv_python.segmentation import target_recognition
 from util.detection import detect_large_particles, detect_blobs
 from util.openptv import simple_highpass
 
@@ -358,12 +359,13 @@ class CameraPanel(QtWidgets.QGraphicsView):
 if __name__ == "__main__":
     import sys
     
-    import argparse
-    parser = argparse.ArgumentParser()
-    parser.add_argument('cal_img', type=str, help="Path to calibration image")
-    parser.add_argument('par_file', type=str, help="Path to main parameters")
-    parser.add_argument('cam', type=int, help="Camera number")
-    args = parser.parse_args()
+    # import argparse
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument('cal_img', type=str, help="Path to calibration image")
+    # parser.add_argument('par_file', type=str, help="Path to main parameters")
+    # parser.add_argument('cam', type=int, help="Camera number")
+    # args = parser.parse_args()
+
     
     app = QtWidgets.QApplication([])
     window = CameraPanel(args.par_file, args.cam)

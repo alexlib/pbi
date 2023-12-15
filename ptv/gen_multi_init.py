@@ -9,7 +9,7 @@ Created on Wed Dec  2 13:38:25 2015
 
 @author: yosef
 """
-from optv.calibration import Calibration
+from opentpv_python.calibration import Calibration
 
 if __name__ == "__main__":
     import argparse, numpy as np

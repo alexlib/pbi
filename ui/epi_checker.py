@@ -9,7 +9,7 @@ Created on Wed Sep  9 11:10:21 2015
 import numpy as np
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from optv.calibration import Calibration
+from opentpv_python.calibration import Calibration
 from scene_window_base import Ui_Scene
 from epi_panel import CamPanelEpi
 
@@ -123,8 +123,8 @@ if __name__ == "__main__":
         control_args, yaml_args['correspondences'], cal_args, **det_pars)
     
     if args.corresp:
-        from optv.correspondences import correspondences, MatchedCoords
-        from optv.orientation import point_positions
+        from opentpv_python.correspondences import correspondences, MatchedCoords
+        from opentpv_python.orientation import point_positions
         
         cals = []
         targs = []

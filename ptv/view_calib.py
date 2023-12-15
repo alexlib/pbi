@@ -128,7 +128,7 @@ class PTVScene(TracerScene):
         
 if __name__ == "__main__":
     from util.openptv import read_scene_config, intersect_known_points
-    from optv.transforms import convert_arr_pixel_to_metric, correct_arr_brown_affine
+    from opentpv_python.transforms import convert_arr_pixel_to_metric, correct_arr_brown_affine
     
     from tracer.spatial_geometry import rotx, roty, rotz, translate
     from tracer.ray_bundle import RayBundle
