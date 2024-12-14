@@ -2,11 +2,11 @@
 
 # Form implementation generated from reading ui file 'trajectories_base.ui'
 #
-# Created by: PyQt5 UI code generator 4.11.4
+# Created by: PySide6 UI code generator 4.11.4
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt5 import QtCore, QtGui
+from PySide6 import QtCore, QtGui
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8

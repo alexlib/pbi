@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pbi"
+version = "0.2.0"
+description = "Yosef Meller PTV toolset"
+authors = [
+    { name = "Yosef Meller", email = "yosefm@gmail.com" },
+    { name = "Alex Liberzon", email = "alex.liberzon@gmail.com" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.6"
+
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "optv",
+    "imageio",
+    "pyside6",
+    "scikit-image"
+]
+
+[project.urls]
+homepage = "https://www.openptv.net"
+repository = "https://github.com/alexlib/pbi"
+
+[tool.setuptools.packages.find]
+where = ["src/util", "src/ui"]

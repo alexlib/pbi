@@ -8,7 +8,7 @@ Created on Wed Mar 29 13:03:43 2017
 @author: yosef
 """
 
-from PyQt5 import QtCore, QtGui
+from PySide6 import QtCore, QtGui
 import numpy as np
 
 from cam_panel import CameraPanel

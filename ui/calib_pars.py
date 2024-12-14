@@ -8,18 +8,18 @@ Created on Tue Aug  4 10:23:01 2015
 @author: yosef
 """
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PySide6 import QtCore, QtGui, QtWidgets
 from calib_pars_base import Ui_calibPars
 
 import numpy as np
 from optv.calibration import Calibration
 
 class CalibParameters(QtWidgets.QWidget, Ui_calibPars):
-    pos_changed = QtCore.pyqtSignal(np.ndarray, name="positionChanged")
-    ang_changed = QtCore.pyqtSignal(np.ndarray, name="orientationChanged")
-    primary_point_changed = QtCore.pyqtSignal(np.ndarray, name="primaryPointChanged")
-    distortion_changed = QtCore.pyqtSignal(np.ndarray, name="distortionChanged")
-    cal_changed = QtCore.pyqtSignal(Calibration, name="calibrationChanged")
+    pos_changed = QtCore.Signal(np.ndarray, name="positionChanged")
+    ang_changed = QtCore.Signal(np.ndarray, name="orientationChanged")
+    primary_point_changed = QtCore.Signal(np.ndarray, name="primaryPointChanged")
+    distortion_changed = QtCore.Signal(np.ndarray, name="distortionChanged")
+    cal_changed = QtCore.Signal(Calibration, name="calibrationChanged")
     
     def __init__(self, parent=None):
         QtWidgets.QWidget.__init__(self, parent)

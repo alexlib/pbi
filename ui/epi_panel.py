@@ -7,7 +7,7 @@ Derives from the CamPanel used for calibration.
 """
 
 import numpy as np
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PySide6 import QtCore, QtGui, QtWidgets
 from cam_panel import CameraPanel
 from optv.calibration import Calibration
 from optv.parameters import VolumeParams, ControlParams

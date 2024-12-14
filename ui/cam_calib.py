@@ -7,7 +7,7 @@ Created on Mon Jul 20 09:46:14 2015
 
 import numpy as np
 
-from PyQt5 import QtGui, QtWidgets  
+from PySide6 import QtGui, QtWidgets  
 from cam_calib_base import Ui_CameraCalibration
 
 from optv.calibration import Calibration

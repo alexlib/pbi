@@ -5,7 +5,7 @@ Created on Sun Jul 19 14:07:11 2015
 @author: yosef
 """
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PySide6 import QtCore, QtGui, QtWidgets
 import numpy as np, matplotlib.pyplot as pl
 
 from optv.calibration import Calibration
@@ -96,7 +96,7 @@ class PatchSet(object):
                     subpatch.setVisible(vis)
     
 class CameraPanel(QtWidgets.QGraphicsView):
-    cal_changed = QtCore.pyqtSignal(Calibration, name="calibrationChanged")
+    cal_changed = QtCore.Signal(Calibration, name="calibrationChanged")
     
     def __init__(self, parent=None):
         QtWidgets.QGraphicsView.__init__(self, parent)

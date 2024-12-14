@@ -16,7 +16,7 @@ with open(path.join(here, 'README'), encoding='utf-8') as f:
 
 setup(
     name='pbi',
-    version='0.1',
+    version='0.2',
 
     description='The Particle Bureau of Investigation',
     long_description=long_description,
@@ -44,7 +44,7 @@ setup(
 
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
-        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.11',
     ],
 
     # What does your project relate to?
@@ -62,13 +62,8 @@ setup(
         'scipy', 
         'matplotlib',
         'optv',
-        'traitsui',
-        'traits',
-        'pyface',
-        'mayavi',
         'imageio',
-        'vtk',
-        'PyQt5',
+        'pyside6',
         'scikit-image'],
 
     # Will list examples once I add them in.

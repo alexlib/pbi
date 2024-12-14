@@ -2,11 +2,11 @@
 
 # Form implementation generated from reading ui file 'calib_pars_base.ui'
 #
-# Created by: PyQt5 UI code generator 4.11.4
+# Created by: PySide6 UI code generator 4.11.4
 #
 # WARNING! All changes made in this file will be lost!
 
-from PyQt5 import QtCore, QtGui, QtWidgets
+from PySide6 import QtCore, QtGui, QtWidgets
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -36,8 +36,9 @@ class Ui_calibPars(object):
         self.label_7.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
+        # font.setBold(True)
+        # font.setWeight(75)
+        font.setWeight(QtGui.QFont.Weight.Bold)  # Use the appropriate QFont.Weight enum value
         self.label_7.setFont(font)
         self.label_7.setObjectName(_fromUtf8("label_7"))
         self.verticalLayout.addWidget(self.label_7)
@@ -145,8 +146,9 @@ class Ui_calibPars(object):
         self.label_13.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
+        # font.setBold(True)
+        # font.setWeight(75)
+        font.setWeight(QtGui.QFont.Weight.Bold)  # Use the appropriate QFont.Weight enum value
         self.label_13.setFont(font)
         self.label_13.setObjectName(_fromUtf8("label_13"))
         self.verticalLayout.addWidget(self.label_13)
@@ -208,8 +210,9 @@ class Ui_calibPars(object):
         self.label_8.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
+        # font.setBold(True)
+        # font.setWeight(75)
+        font.setWeight(QtGui.QFont.Weight.Bold)  # Use the appropriate QFont.Weight enum value        
         self.label_8.setFont(font)
         self.label_8.setObjectName(_fromUtf8("label_8"))
         self.verticalLayout.addWidget(self.label_8)
