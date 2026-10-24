@@ -11,3 +11,4 @@ ed/img/*
 ed/tmp/*
 tracer/*
 .DS_Store
+uv.lock
